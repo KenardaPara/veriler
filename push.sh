@@ -13,7 +13,7 @@ commit_files() {
 
 upload_files() {
   git remote add origin https://${GH_TOKEN}@github.com/KenardaPara/veriler.git > /dev/null 2>&1
-  git push --quiet --set-upstream origin travis-test
+  git push --set-upstream origin travis-test
 }
 
 setup_git
