@@ -1,6 +1,8 @@
 language: minimal
 script: ./funds testdata
 after_success:
+  - git config credential.helper "store --file=.git/credentials"
+  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - ./push.sh
 
 branches:
