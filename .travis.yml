@@ -2,3 +2,7 @@ language: minimal
 script: ./funds testdata
 after_success:
   - ./push.sh
+
+branches:
+  only:
+  - master
