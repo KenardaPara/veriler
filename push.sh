@@ -16,6 +16,9 @@ upload_files() {
   git push origin travis-test
 }
 
-setup_git
-commit_files
-upload_files
+if [ "$TRAVIS_EVENT_TYPE" = "cron" ] ; then
+    setup_git
+    commit_files
+    upload_files
+fi
+   
