@@ -6,14 +6,14 @@ setup_git() {
 }
 
 commit_files() {
-  git checkout travis-test  
+  git checkout -b travis-test2
   git add testdata
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_files() {
   git remote add origin https://${GH_TOKEN}@github.com/KenardaPara/veriler.git > /dev/null 2>&1
-  git push --set-upstream origin travis-test
+  git push --set-upstream origin travis-test2
 }
 
 setup_git
