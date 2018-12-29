@@ -6,6 +6,7 @@ setup_git() {
 }
 
 commit_files() {
+  git checkout -b testdata  
   git add testdata
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
