@@ -6,14 +6,13 @@ setup_git() {
 }
 
 commit_files() {
-  git checkout -b travis-test
-  git add testdata
-  git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+  git add besdata
+  git commit --message "Data Updated: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_files() {
   git remote add origin https://${GH_TOKEN}@github.com/KenardaPara/veriler.git 
-  git push origin travis-test
+  git push origin master
 }
 
 if [ "$TRAVIS_EVENT_TYPE" = "cron" ] ; then
